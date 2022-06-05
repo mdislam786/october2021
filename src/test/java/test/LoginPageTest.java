@@ -9,8 +9,7 @@ import org.testng.annotations.Test;
 import page.LoginPage;
 import page.TestBase;
 
-public class LoginPageTest extends TestBase{
-	
+public class LoginPageTest extends TestBase{	
 	LoginPage loginPageObj;	
 	
 	@BeforeMethod
@@ -21,9 +20,10 @@ public class LoginPageTest extends TestBase{
 	
 	@Test
 	public void loginTest() throws Throwable {
-		loginPageObj.enterUserName("demo@techfios.com");
+		loginPageObj.enterUserName("demo@techfios.com");		
 		loginPageObj.enterPassword("abc123");
 		loginPageObj.clickSignInButton();
+		System.out.println("Print something");
 		takeScreenshot(driver);		
 	}
 	
@@ -42,7 +42,6 @@ public class LoginPageTest extends TestBase{
 	public void tearDown() {
 		driver.close();
 		driver.quit();
-	}
-	
+	}	
 
 }
